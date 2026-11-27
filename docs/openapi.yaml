@@ -1,0 +1,28 @@
+openapi: 3.0.3
+info:
+  title: Task Tracker API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000/api/v1
+paths:
+  /tasks:
+    get:
+      summary: Liste aller Aufgaben
+      responses:
+        "200":
+          description: OK
+    post:
+      summary: Neue Aufgabe erstellen
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: Release Notes prüfen
+      responses:
+        "201":
+          description: Created
